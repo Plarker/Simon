@@ -1,4 +1,7 @@
 var context = new (window.AudioContext || window.webkitAudioContext)();
+var volume = context.createGain();
+volume.connect(context.destination);
+volume.gain.volume = 0.1;
 
 $(document).ready(function(){ 
     $('#start').modal({
@@ -95,7 +98,7 @@ function selectColor(color){
         var osc1 = context.createOscillator(); // instantiate an oscillator
         osc1.type = 'square'; // this is the default - also square, sawtooth, triangle
         osc1.frequency.value = 329.63; // Hz
-        osc1.connect(context.destination); // connect it to the destination
+        osc1.connect(volume); // connect it to the destination
         osc1.start(); // start the oscillator
         osc1.stop(context.currentTime + .3); // stop 2 seconds after the current time
     }
@@ -104,7 +107,7 @@ function selectColor(color){
         var osc2 = context.createOscillator(); // instantiate an oscillator
         osc2.type = 'square'; // this is the default - also square, sawtooth, triangle
         osc2.frequency.value = 220; // Hz
-        osc2.connect(context.destination); // connect it to the destination
+        osc2.connect(volume); // connect it to the destination
         osc2.start(); // start the oscillator
         osc2.stop(context.currentTime + .3); // stop 2 seconds after the current time
 
@@ -114,7 +117,7 @@ function selectColor(color){
         var osc3 = context.createOscillator(); // instantiate an oscillator
         osc3.type = 'square'; // this is the default - also square, sawtooth, triangle
         osc3.frequency.value = 277.18; // Hz
-        osc3.connect(context.destination); // connect it to the destination
+        osc3.connect(volume); // connect it to the destination
         osc3.start(); // start the oscillator
         osc3.stop(context.currentTime + .3); // stop 2 seconds after the current time
     }
@@ -123,7 +126,7 @@ function selectColor(color){
         var osc4 = context.createOscillator(); // instantiate an oscillator
         osc4.type = 'square'; // this is the default - also square, sawtooth, triangle
         osc4.frequency.value = 164.81; // Hz
-        osc4.connect(context.destination); // connect it to the destination
+        osc4.connect(volume); // connect it to the destination
         osc4.start(); // start the oscillator
         osc4.stop(context.currentTime + .3); // stop 2 seconds after the current time
     }
