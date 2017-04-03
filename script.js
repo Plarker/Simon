@@ -1,7 +1,5 @@
 var context = new (window.AudioContext || window.webkitAudioContext)();
 
-
-
 $(document).ready(function(){ 
     $('#start').modal({
         backdrop: 'static',
