@@ -1,7 +1,7 @@
 var context = new (window.AudioContext || window.webkitAudioContext)();
 var volume = context.createGain();
 volume.connect(context.destination);
-volume.gain.volume = 0.1;
+volume.gain.value = 0.2;
 
 $(document).ready(function(){ 
     $('#start').modal({
