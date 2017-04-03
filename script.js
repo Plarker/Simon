@@ -10,18 +10,30 @@ $(document).ready(function(){
     });
     $('#start').modal('show');
     $('#green').click(function(){
+        if(!clickable){
+            return;
+        }
         selectColor('green');
         checkLoss('green');
     });
     $('#red').click(function(){
+        if(!clickable){
+            return;
+        }
         selectColor('red');
         checkLoss('red');
     });
     $('#yellow').click(function(){
+        if(!clickable){
+            return;
+        }
         selectColor('yellow');
         checkLoss('yellow');
     });
     $('#blue').click(function(){
+        if(!clickable){
+            return;
+        }
         selectColor('blue');
         checkLoss('blue');
     });
@@ -48,9 +60,6 @@ function game(){
 }
 
 function checkLoss(color){
-    if(!clickable){
-        return;
-    }
     if(pattern[position]==color){
         position++;
         if(position == pattern.length){
@@ -84,11 +93,12 @@ function patternHelper(pattern){
     }
     else{
         clearInterval(interval);
-        $('#play').modal('show');
+        clickable = true;
+        /*$('#play').modal('show');
         setTimeout(function(){
             $('#play').modal('hide');
             clickable = true;
-        },1500);
+        },1500);*/
     }
 }
 
