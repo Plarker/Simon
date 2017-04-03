@@ -1,4 +1,4 @@
 # Simon
 Simon game in HTML and JS
 
-play at Plarker.github.io/Simon
+Play at [plarker.github.io/Simon](plarker.github.io/Simon)
